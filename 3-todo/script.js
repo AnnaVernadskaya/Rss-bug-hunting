@@ -32,7 +32,7 @@ function toggleTask(id) {
 }
 
 function deleteTask(id) {
-  tasks.filter((t) => t.id !== id);
+  tasks = tasks.filter((t) => t.id !== id);
   render();
 }
 
@@ -50,6 +50,8 @@ function updateCounter() {
 }
 
 function render() {
+  list.innerHTML = "";
+
   const visible = getVisibleTasks();
   for (let i = 0; i < visible.length; i++) {
     const task = visible[i];
